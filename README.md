@@ -8,3 +8,7 @@
         * Common example: Iterator inside collection, Map.Entry inside Map
     * Static inner class
         * common example: Helper class or Enum only related to the class
+    * Anonymous inner class
+        * no name, to be used once
+        * common usage: implement Runnable, implement event handler
+        
