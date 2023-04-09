@@ -1,3 +1,5 @@
+package vc.java.inner_class.non_static;
+
 public class OuterClass {
     private int outerClassPrivateField=10;
     public void outerMethod(){
