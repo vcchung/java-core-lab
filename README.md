@@ -11,4 +11,8 @@
     * Anonymous inner class
         * no name, to be used once
         * common usage: implement Runnable, implement event handler
-        
+## Singleton
+    * singleton can be implemented using check check locking with lazy init factory method
+        * but you can break it by serialized and deserialized the class, and using reflection to change contrctor to public and create new object.
+    * but enum is better
+        * easier and JVM guarantee unique
