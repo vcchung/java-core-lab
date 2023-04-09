@@ -1,4 +1,4 @@
-package vc.java.inner_class.non_static;
+package vc.java.inner_class.non_static_basic;
 
 public class OuterClass {
     private int outerClassPrivateField=10;
