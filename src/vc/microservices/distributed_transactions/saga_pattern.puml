@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+actor user
+participant coordinator
+participant orderService
+participant paymentService
+
+user -> coordinator: order
+coordinator -> orderService: update Order
+coordinator -> paymentService: update payment
+
+alt success case
+orderService -->coordinator: update ok
+paymentService --> coordinator: update ok
+coordinator --> user : order ok
+else rollback case
+orderService -->coordinator: update failed
+coordinator -> orderService: rollback order
+coordinator -> paymentService: rollback payment
+coordinator --> user : order failed
+end alt
+
+@enduml

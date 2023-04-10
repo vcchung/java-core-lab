@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+actor user
+participant coordinator
+participant orderService
+participant paymentService
+
+user -> coordinator: order
+coordinator -> orderService: prepare
+note left
+Two phrases: prepare and commit
+end note
+coordinator -> paymentService: prepare
+orderService -->coordinator: prepare ok
+paymentService --> coordinator: prepare ok
+coordinator -> orderService: commit
+coordinator -> paymentService: commit
+orderService -->coordinator: commit ok
+paymentService --> coordinator: commit ok
+coordinator --> user : order ok
+@enduml

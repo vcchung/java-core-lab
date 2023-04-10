@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+
+actor user as user
+participant app as app
+database DB as db
+
+
+
+user -> app: order
+app -> db: start transaction
+note right
+transaction can span over multiple tables on single DB
+end note
+app -> db: update order table
+app -> db: update payment table
+app -> db: commit transaction
+app --> user: order success
+
+
+@enduml
