@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Ball
+
+Ball <|-- BasketBall
+Ball <|-- Soccer
+
+Ball : play():void
+Ball : + int size
+
+class Factory{
+    {static} createBall(type: BallType):Ball
+}
+
+class Main{
+
+}
+
+Main --> Factory
+enum BallType{
+BASKETBALL,
+SOCCER
+}
+@enduml

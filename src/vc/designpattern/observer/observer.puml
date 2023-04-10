@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Subject{
+    + addObserver(observer:Observer)
+    + removeObserver(observer:Observer)
+    - notify(event:Event)
+}
+
+interface Event{}
+class UpdateEvent{}
+
+Event <|-- UpdateEvent
+
+interface Observer{
+ + handle(event:Event):void
+}
+
+class ObserverA{}
+class ObserverB{}
+
+Observer<|--ObserverA
+Observer<|--ObserverB
+
+Subject "1" -- "*" Observer
+
+@enduml
